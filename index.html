@@ -3,18 +3,21 @@
 
 <head>
     <title>UWC Myanmar - Map Leaflet</title>
+
+    <!-- Copy Javascript and CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
         integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
         crossorigin=""></script>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    
 
 </head>
 
 <body style="padding:0px;margin:0px;">
 
+    <!-- Copy from here onwards -->
     <center>
         <div id="mapid" style="height:100vh;width:100vw;padding:0px;margin:0px;"></div>
     </center>
@@ -32,10 +35,25 @@
                 id: 'mapbox.streets'
             }).addTo(mymap);
 
-        var text = '{"employees":[' +
-            '{"firstName":"John","lastName":"Doe" },' +
-            '{"firstName":"Anna","lastName":"Smith" },' +
-            '{"firstName":"Peter","lastName":"Jones" }]}';
+        var text = '{"UWC":[' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
+            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" }]}';
 
         obj = JSON.parse(text);
 
@@ -43,7 +61,7 @@
             .bindPopup(
                 "<img src='https://www.uwc.org/_site/data/images/news/17/home-Image%201.jpg' width='200px'/><h4>"+obj.employees[1].firstName+"</h4><p>Victoria, Canada<p>"
             ).openPopup();
-            
+
         var popup = L.popup();
     </script>
 
