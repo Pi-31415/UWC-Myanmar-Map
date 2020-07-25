@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
         integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
         crossorigin=""></script>
-    
+
 
 </head>
 
@@ -24,7 +24,7 @@
 
     <script>
         var mymap = L.map('mapid', {
-            center: [0, 0],
+            center: [30, 0],
             zoom: 2,
             scrollWheelZoom: false
         });
@@ -35,34 +35,25 @@
                 id: 'mapbox.streets'
             }).addTo(mymap);
 
-        var text = '{"UWC":[' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" },' +
-            '{"name":"","location":"","latitude":,"longitude":,"image_url":"" }]}';
+        var text = '{"uwc":[' +
+            '{"name":"Pearson College UWC","location":"Victoria, Canada","latitude":"48.3479497","longitude":"-123.5657213","image_url":"https://www.uwc.org/_site/data/images/news/17/home-Image%201.jpg" },' +
+
+            '{"name":"asdf","location":"sadf","latitude":"234","longitude":"234","image_url":"https://www.uwc.org/_site/data/images/news/17/home-Image%201.jpg" }]}';
 
         obj = JSON.parse(text);
 
-        L.marker([48.3479497, -123.5657213]).addTo(mymap)
-            .bindPopup(
-                "<img src='https://www.uwc.org/_site/data/images/news/17/home-Image%201.jpg' width='200px'/><h4>"+obj.employees[1].firstName+"</h4><p>Victoria, Canada<p>"
-            ).openPopup();
+        console.log();
 
-        var popup = L.popup();
+        L.marker([obj.uwc[0].latitude, obj.uwc[0].longitude]).addTo(mymap)
+            .bindPopup(
+                "<img src='" + obj.uwc[0].image_url + "' width='200px'/><h4>" + obj.uwc[0].name + "</h4><p>" + obj.uwc[
+                    0].location + "<p>"
+            ).on('mouseover', function (e) {
+            this.openPopup();
+        }).on('mouseout', function (e) {
+            this.closePopup();
+        });
+
     </script>
 
 </body>
