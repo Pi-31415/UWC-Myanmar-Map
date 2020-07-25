@@ -24,16 +24,16 @@
 
     <script>
         var mymap = L.map('mapid', {
-            center: [30, 0],
+            center: [35, 0],
             zoom: 2,
             scrollWheelZoom: false,
             zoomControl: false
         });
         var greenIcon = L.icon({
             iconUrl: './logo.png',
-            iconSize: [38, 95], // size of the icon
-            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+            iconSize: [20, 20], // size of the icon
+            iconAnchor: [10, 20], // point of the icon which will correspond to marker's location
+            popupAnchor: [0,-30] // point from which the popup should open relative to the iconAnchor
         });
 
         L.tileLayer(
@@ -58,11 +58,12 @@
             '{"name":"UWC Dilijan","location":"Dilijan, Armenia","latitude":"40.7390958","longitude":"44.8299694","image_url":"/_site/data/images/news/30/home-UWC%20Day.jpg" },' +
             '{"name":"UWC Mahindra College","location":"Pune, India","latitude":"18.5432183","longitude":"73.5824856","image_url":"/_site/data/images/news/24/home-MH2.jpg" },' +
             '{"name":"UWC Thailand","location":"Phuket, Thailand","latitude":"8.0509888","longitude":"98.3501757","image_url":"/_site/data/images/news/22/home-Walk%20way.jpg" },' +
-            '{"name":"","location":"","latitude":"","longitude":"","image_url":"" },' +
-            '{"name":"","location":"","latitude":"","longitude":"","image_url":"" },' +
-            '{"name":"","location":"","latitude":"","longitude":"","image_url":"" },' +
-            '{"name":"","location":"","latitude":"","longitude":"","image_url":"" },' +
-            '{"name":"asdf","location":"sadf","latitude":"12","longitude":"12","image_url":"https://www.uwc.org/_site/data/images/news/17/home-Image%201.jpg" }]}';
+            '{"name":"UWC South East Asia","location":"Singapore","latitude":"1.3029495","longitude":"103.7752758","image_url":"/_site/data/images/news/20/home-UWCSEA_East%20Campus%20Plaza%20overview.jpg" },' +
+            '{"name":"Li Po Chun UWC","location":"Hong Kong S.A.R, China","latitude":"22.4308026","longitude":"114.2451733","image_url":"/_site/data/images/news/16/home-LPCUWC1.jpg" },' +
+            '{"name":"UWC Changshu China","location":"Changshu, China","latitude":"31.6064721","longitude":"120.734704","image_url":"/_site/data/images/news/21/home-UWC%20Day%201%20Finals-large-10.jpg" },' +
+            '{"name":"UWC ISAK Japan","location":"Kariuzawa, Japan","latitude":"36.358942","longitude":"138.5545913","image_url":"/_site/data/images/news/23/home-UWCIJ_2_Castle.jpg" },' +
+            '{"name":"Waterford Kamhlaba UWC of Southern Africa","location":"Mbabane, Eswatini","latitude":"-26.3028074","longitude":"31.1019784","image_url":"/_site/data/images/news/19/home-aerial%20view%20of%20WK_fullsize_Connor%20Baer,%20Leo%20Penny%20and%20Nicolai%20Davies.jpg" },' +
+            '{"name":"UWC East Africa","location":"Moshi and Arusha, Tanzania","latitude":"-3.3241094","longitude":"37.317852","image_url":"/_site/data/images/news/5031/home-View%20of%20Kili%20from%20campus%205).JPG" }]}';
 
         obj = JSON.parse(text);
 
