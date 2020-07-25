@@ -1,6 +1,8 @@
 # UWC-Myanmar-Map
 
-Uses
+Demo : [https://uwcmyanmarmap.netlify.app/](https://uwcmyanmarmap.netlify.app/)
+
+Dependencies
 
 * Leaflet JS
 * Locally hosted file 'logo.png'
