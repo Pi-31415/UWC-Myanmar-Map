@@ -11,6 +11,7 @@
             background-color: #fff;
             width: 350px;
             color: #777;
+            overflow: auto;
         }
 
         .card:hover {
@@ -31,6 +32,12 @@
 
         .school-container {
             position: absolute;
+        }
+
+        .card-containers{
+            position:absolute;
+            padding:10px;
+            border:solid red 1px;
         }
 
         svg {
@@ -73,21 +80,24 @@
                         </g>
                     </svg>
                 </div>
-            
+
                 <div style='position: relative;'>
-                    <div class='card' style='position:absolute;left:40px;bottom:-40px;' id='Pearson-card'>
-                        <p>
-                            <img src='./img/uwc_pearson.jpg' class='uwcimg'>
-                            <span class='uwcheading'>
-                                Pearson College UWC
-                            </span>
-                            <br /> <br />
-                            <i>Victoria, Canada</i>
-                        </p>
-            
+
+                    <div class= "card-containers" style='left:20px;bottom:-40px;' id='Pearson-card'>
+                        <div class='card'>
+                                <img src='./img/uwc_pearson.jpg' class='uwcimg'>
+                                <div style='padding:20px 0px 0px 20px'>
+                                    <span class='uwcheading'>
+                                        Pearson College UWC
+                                    </span>
+                                    <br /> <br />
+                                    <i>Victoria, Canada</i>
+                                </div>
+                        </div>
                     </div>
+
                 </div>
-            
+
             </div>
 
 
@@ -99,21 +109,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $(".card").hide();
+            $(".card-containers").hide();
+            var shown = false;
 
 
-            $("#Pearson").hover(function () {
-                $("#Pearson-card").show();
+            var name = "#Pearson";
+            var cardname = name+"-card";
+
+            $(name).hover(function () {
+                $(cardname).show();
             }, function () {
- 
-                $("#Pearson-card").hide();
+                if (shown == false) {
+                    $(cardname).hide();
+                }
             });
 
-            
+            $(cardname).hover(function () {
+                $(cardname).show();
+                shown = true;
+            }, function () {
+                $(cardname).fadeOut();
+                shown = false;
+            });
 
-            
 
-            
+
+
+
+
 
 
 
