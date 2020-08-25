@@ -1,7 +1,7 @@
 <html>
 
 <head>
-
+    <meta charset="UTF-8">
     <style>
         .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -158,6 +158,9 @@
 
             var i;
             for (i = 0; i <= obj.uwc.length; i++) {
+                console.log(obj.uwc[i].id);
+
+
                 /*L.marker([obj.uwc[i].latitude, obj.uwc[i].longitude], {
                         icon: greenIcon
                     }).addTo(mymap)
