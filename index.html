@@ -11,7 +11,6 @@
             background-color: #fff;
             width: 350px;
             color: #777;
-            visibility: hidden;
         }
 
         .card:hover {
@@ -61,8 +60,8 @@
         <div>
 
             <!--Pearson-->
-            <div class="school-container" style="top:21%;left:15.5%;" id="Pearson">
-                <div onhover="">
+            <div class="school-container" style="top:21%;left:15.5%;">
+                <div id="Pearson">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
                         style="enable-background:new 0 0 64 64;" xml:space="preserve">
@@ -95,6 +94,22 @@
 
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".card").hide();
+
+
+            $("#Pearson").hover(function () {
+                $("#Pearson-card").show();
+            });
+            $("#Pearson").mouseout(function () {
+                $("#Pearson-card").hide();
+            });
+
+
+        });
+    </script>
 
 </body>
 
