@@ -61,8 +61,8 @@
 
             <!--Pearson-->
             <div class="school-container" style="top:21%;left:15.5%;">
-                <div id="Pearson">
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                <div>
+                    <svg id="Pearson" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
                         style="enable-background:new 0 0 64 64;" xml:space="preserve">
                         <g>
@@ -102,10 +102,19 @@
 
             $("#Pearson").hover(function () {
                 $("#Pearson-card").show();
+            }, function () {
+
+                setTimeout(function () {
+                    $("#Pearson-card").hide();
+                }, 1500);
+
+
             });
-            $("#Pearson").mouseout(function () {
-                $("#Pearson-card").hide();
+
+            $("#Pearson-card").hover(function () {
+                $("#Pearson-card").show();
             });
+
 
 
         });
