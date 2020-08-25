@@ -58,47 +58,15 @@
     </style>
 </head>
 
-<body style="margin:0">
+<body style="margin:"0"">
 
 
-    <div style="background-color: #a2dbd8;width:100vw;margin:0;position: relative;">
+    <div style="background-color: #a2dbd8;width:100vw;margin:"0";position: relative;">
         <img src="./world.svg" alt="map" width="90%" height="auto">
 
-        <div>
+        <div id="school-list">
 
-            <!--School-->
-            <div class='school-container' style='top:21%;left:15.5%;'>
-                <div>
-                    <svg id='Pearson' version='1.1' xmlns='http://www.w3.org/2000/svg'
-                        xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 64 64'
-                        style='enable-background:new 0 0 64 64;' xml:space='preserve'>
-                        <g>
-                            <g>
-                                <path class='st0' d='M51.7,23.5c0-11-8.8-20-19.7-20s-19.7,9-19.7,20C12.3,40.3,32,60.5,32,60.5S51.7,40.3,51.7,23.5z M22.7,22.7
-            c0-5.2,4.2-9.3,9.3-9.3s9.3,4.2,9.3,9.3S37.2,32,32,32S22.7,27.8,22.7,22.7z' />
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-
-                <div style='position: relative;'>
-
-                    <div class="card-containers" style='left:20px;bottom:-40px;' id='Pearson-card'>
-                        <div class='card'>
-                            <img src='./img/uwc_pearson.jpg' class='uwcimg'>
-                            <div style='padding:20px 0px 0px 20px'>
-                                <span class='uwcheading'>
-                                    Pearson College UWC
-                                </span>
-                                <br /> <br />
-                                <i>Victoria, Canada</i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
+            
 
 
 
@@ -135,49 +103,35 @@
 
 
             var text = '{"uwc":[' +
-                '{"id":"Pearson","name":"Pearson College UWC","location":"Victoria, Canada","latitude":"48.3479497","longitude":"-123.5657213","image_url":"/_site/data/images/news/17/home-Image%201.jpg" },' +
-                '{"id":"USA","name":"UWC-USA","location":"Montezuma, New Mexico","latitude":"35.6559717","longitude":"-105.2834712","image_url":"/_site/data/images/news/18/home-UWC173.jpg" },' +
-                '{"id":"CostaRica","name":"UWC Costa Rica","location":"Santa Ana Downtown, Costa Rica","latitude":"9.9368646","longitude":"-84.180047","image_url":"/_site/data/images/news/32/home-Agents%20of%20Change%20projects.jpg" },' +
-                '{"id":"RCN","name":"UWC Red Cross Nordic","location":"Flekke, Norway","latitude":"61.3306201","longitude":"5.3316886","image_url":"/_site/data/images/news/26/home-UWCRCN_Hiking_2.jpg" },' +
-                '{"id":"Atlantic","name":"UWC Atlantic College","location":"Vale of Glamorgan, Wales, UK","latitude":"51.404566","longitude":"-3.5320861","image_url":"/_site/data/images/news/29/home-Campus-and-Students_03a.jpg" },' +
-                '{"id":"Maastricht","name":"UWC Maastricht","location":"Maastricht, The Netherlands","latitude":"50.8555556","longitude":"5.7211446","image_url":"/_site/data/images/news/31/home-IMG_4087.jpg" },' +
-                '{"id":"Bosch","name":"UWC Robert Bosch College","location":"Freiburg, Germany","latitude":"47.9945241","longitude":"7.8801739","image_url":"/_site/data/images/news/27/home-UWC%20Robert%20Bosch%20College_Schulerdorf.jpg" },' +
-                '{"id":"Adriatic","name":"UWC Adriatic","location":"Duino, Italy","latitude":"45.7724917","longitude":"13.6031167","image_url":"/_site/data/images/news/28/home-Yearbook%20Picture.jpg" },' +
-                '{"id":"Mostar","name":"UWC Mostar","location":"Mostar, Bosnia and Herzegovina","latitude":"43.3431517","longitude":"17.805178","image_url":"/_site/data/images/news/25/home-The%20school%20and%20graduation.jpg" },' +
-                '{"id":"Dilijan","name":"UWC Dilijan","location":"Dilijan, Armenia","latitude":"40.7390958","longitude":"44.8299694","image_url":"/_site/data/images/news/30/home-UWC%20Day.jpg" },' +
-                '{"id":"Mahindra","name":"UWC Mahindra College","location":"Pune, India","latitude":"18.5432183","longitude":"73.5824856","image_url":"/_site/data/images/news/24/home-MH2.jpg" },' +
-                '{"id":"Thailand","name":"UWC Thailand","location":"Phuket, Thailand","latitude":"8.0509888","longitude":"98.3501757","image_url":"/_site/data/images/news/22/home-Walk%20way.jpg" },' +
-                '{"id":"SEA","name":"UWC South East Asia","location":"Singapore","latitude":"1.3029495","longitude":"103.7752758","image_url":"/_site/data/images/news/20/home-UWCSEA_East%20Campus%20Plaza%20overview.jpg" },' +
-                '{"id":"LPC","name":"Li Po Chun UWC","location":"Hong Kong S.A.R, China","latitude":"22.4308026","longitude":"114.2451733","image_url":"/_site/data/images/news/16/home-LPCUWC1.jpg" },' +
-                '{"id":"Changshu","name":"UWC Changshu China","location":"Changshu, China","latitude":"31.6064721","longitude":"120.734704","image_url":"/_site/data/images/news/21/home-UWC%20Day%201%20Finals-large-10.jpg" },' +
-                '{"id":"ISAK","name":"UWC ISAK Japan","location":"Kariuzawa, Japan","latitude":"36.358942","longitude":"138.5545913","image_url":"/_site/data/images/news/23/home-UWCIJ_2_Castle.jpg" },' +
-                '{"id":"UWCSA","name":"Waterford Kamhlaba UWC of Southern Africa","location":"Mbabane, Eswatini","latitude":"-26.3028074","longitude":"31.1019784","image_url":"/_site/data/images/news/19/home-aerial%20view%20of%20WK_fullsize_Connor%20Baer,%20Leo%20Penny%20and%20Nicolai%20Davies.jpg" },' +
-                '{"id":"UWCEA","name":"UWC East Africa","location":"Moshi and Arusha, Tanzania","latitude":"-3.3241094","longitude":"37.317852","image_url":"/_site/data/images/news/5031/home-View%20of%20Kili%20from%20campus%205).JPG" }]}';
+                '{"id":"Pearson","name":"Pearson College UWC","location":"Victoria, Canada","top":"0","left":"0","image_url":"/_site/data/images/news/17/home-Image%201.jpg" },' +
+                '{"id":"USA","name":"UWC-USA","location":"Montezuma, New Mexico","top":"0","left":"0","image_url":"/_site/data/images/news/18/home-UWC173.jpg" },' +
+                '{"id":"CostaRica","name":"UWC Costa Rica","location":"Santa Ana Downtown, Costa Rica","top":"0","left":"0","image_url":"/_site/data/images/news/32/home-Agents%20of%20Change%20projects.jpg" },' +
+                '{"id":"RCN","name":"UWC Red Cross Nordic","location":"Flekke, Norway","top":"0","left":"0","image_url":"/_site/data/images/news/26/home-UWCRCN_Hiking_2.jpg" },' +
+                '{"id":"Atlantic","name":"UWC Atlantic College","location":"Vale of Glamorgan, Wales, UK","top":"0","left":"0","image_url":"/_site/data/images/news/29/home-Campus-and-Students_03a.jpg" },' +
+                '{"id":"Maastricht","name":"UWC Maastricht","location":"Maastricht, The Netherlands","top":"0","left":"0","image_url":"/_site/data/images/news/31/home-IMG_4087.jpg" },' +
+                '{"id":"Bosch","name":"UWC Robert Bosch College","location":"Freiburg, Germany","top":"0","left":"0","image_url":"/_site/data/images/news/27/home-UWC%20Robert%20Bosch%20College_Schulerdorf.jpg" },' +
+                '{"id":"Adriatic","name":"UWC Adriatic","location":"Duino, Italy","top":"0","left":"0","image_url":"/_site/data/images/news/28/home-Yearbook%20Picture.jpg" },' +
+                '{"id":"Mostar","name":"UWC Mostar","location":"Mostar, Bosnia and Herzegovina","top":"0","left":"0","image_url":"/_site/data/images/news/25/home-The%20school%20and%20graduation.jpg" },' +
+                '{"id":"Dilijan","name":"UWC Dilijan","location":"Dilijan, Armenia","top":"0","left":"0","image_url":"/_site/data/images/news/30/home-UWC%20Day.jpg" },' +
+                '{"id":"Mahindra","name":"UWC Mahindra College","location":"Pune, India","top":"0","left":"0","image_url":"/_site/data/images/news/24/home-MH2.jpg" },' +
+                '{"id":"Thailand","name":"UWC Thailand","location":"Phuket, Thailand","top":"0","left":"0","image_url":"/_site/data/images/news/22/home-Walk%20way.jpg" },' +
+                '{"id":"SEA","name":"UWC South East Asia","location":"Singapore","top":"0","left":"0","image_url":"/_site/data/images/news/20/home-UWCSEA_East%20Campus%20Plaza%20overview.jpg" },' +
+                '{"id":"LPC","name":"Li Po Chun UWC","location":"Hong Kong S.A.R, China","top":"0","left":"0","image_url":"/_site/data/images/news/16/home-LPCUWC1.jpg" },' +
+                '{"id":"Changshu","name":"UWC Changshu China","location":"Changshu, China","top":"0","left":"0","image_url":"/_site/data/images/news/21/home-UWC%20Day%201%20Finals-large-10.jpg" },' +
+                '{"id":"ISAK","name":"UWC ISAK Japan","location":"Kariuzawa, Japan","top":"0","left":"0","image_url":"/_site/data/images/news/23/home-UWCIJ_2_Castle.jpg" },' +
+                '{"id":"UWCSA","name":"Waterford Kamhlaba UWC of Southern Africa","location":"Mbabane, Eswatini","top":"0","left":"0","image_url":"/_site/data/images/news/19/home-aerial%20view%20of%20WK_fullsize_Connor%20Baer,%20Leo%20Penny%20and%20Nicolai%20Davies.jpg" },' +
+                '{"id":"UWCEA","name":"UWC East Africa","location":"Moshi and Arusha, Tanzania","top":"0","left":"0","image_url":"/_site/data/images/news/5031/home-View%20of%20Kili%20from%20campus%205).JPG" }]}';
 
             obj = JSON.parse(text);
-
+            var output = "";
             var i;
-            for (i = 0; i <= obj.uwc.length; i++) {
+            for (i = 0; i < obj.uwc.length; i++) {
                 console.log(obj.uwc[i].id);
-
-
-                /*L.marker([obj.uwc[i].latitude, obj.uwc[i].longitude], {
-                        icon: greenIcon
-                    }).addTo(mymap)
-                    .bindPopup(
-                        "<div style='text-align: center'><img src='" + "https://www.uwc.org" + obj.uwc[i]
-                        .image_url +
-                        "' width='130px' style='margin:5px;border-radius:50%;border:solid #009b90 7px;box-shadow: 5px 5px 5px #888888;'><br><b style='font-size:1.3em;color:#009b90;'>" +
-                        obj.uwc[i].name + "</b><br><i style='color:#777;'>" + obj.uwc[i].location + "</i></div>"
-                    ).on('mouseover', function (e) {
-                        this.openPopup();
-                    }).on('mouseout', function (e) {
-                        this.closePopup();
-                    });*/
+                output+="<!--School--><divclass='school-container'style='top:"+obj.uwc[i].top+"%;left:"+obj.uwc[i].left+"%;'><div><svgid='"+obj.uwc[i].id+"'version='1.1'xmlns='http://www.w3.org/2000/svg'xmlns:xlink='http://www.w3.org/1999/xlink'x='0px'y='0px'viewBox='006464'style='enable-background:new006464;'xml:space='preserve'><g><g><pathclass='st0'd='M51.7,23.5c0-11-8.8-20-19.7-20s-19.7,9-19.7,20C12.3,40.3,32,60.5,32,60.5S51.7,40.3,51.7,23.5zM22.7,22.7c0-5.2,4.2-9.3,9.3-9.3s9.3,4.2,9.3,9.3S37.2,32,32,32S22.7,27.8,22.7,22.7z'/></g></g></svg></div><divstyle='position:relative;'><divclass='card-containers'style='left:20px;bottom:-40px;'id='"+obj.uwc[i].id+"-card'><divclass='card'><imgsrc='./img/"+obj.uwc[i].id+".jpg'class='uwcimg'><divstyle='padding:20px0px0px20px'><spanclass='uwcheading'>"+obj.uwc[i].name+"</span><br/><br/><i>"+obj.uwc[i].location+"</i></div></div></div></div></div>";
             }
 
 
-
+            console.log(output);
 
 
 
