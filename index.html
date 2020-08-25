@@ -59,33 +59,35 @@
 
         <div>
 
-            <!--Pearson-->
-            <div class="school-container" style="top:21%;left:15.5%;">
+            <!--School-->
+            <div class='school-container' style='top:21%;left:15.5%;'>
                 <div>
-                    <svg id="Pearson" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64"
-                        style="enable-background:new 0 0 64 64;" xml:space="preserve">
+                    <svg id='Pearson' version='1.1' xmlns='http://www.w3.org/2000/svg'
+                        xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 64 64'
+                        style='enable-background:new 0 0 64 64;' xml:space='preserve'>
                         <g>
                             <g>
-                                <path class="st0" d="M51.7,23.5c0-11-8.8-20-19.7-20s-19.7,9-19.7,20C12.3,40.3,32,60.5,32,60.5S51.7,40.3,51.7,23.5z M22.7,22.7
-			c0-5.2,4.2-9.3,9.3-9.3s9.3,4.2,9.3,9.3S37.2,32,32,32S22.7,27.8,22.7,22.7z" />
+                                <path class='st0' d='M51.7,23.5c0-11-8.8-20-19.7-20s-19.7,9-19.7,20C12.3,40.3,32,60.5,32,60.5S51.7,40.3,51.7,23.5z M22.7,22.7
+            c0-5.2,4.2-9.3,9.3-9.3s9.3,4.2,9.3,9.3S37.2,32,32,32S22.7,27.8,22.7,22.7z' />
                             </g>
                         </g>
                     </svg>
                 </div>
-
-                <div style="position: relative;">
-                    <div class="card" style="position:absolute;left:40px;bottom:-40px;" id="Pearson-card">
+            
+                <div style='position: relative;'>
+                    <div class='card' style='position:absolute;left:40px;bottom:-40px;' id='Pearson-card'>
                         <p>
-                            <img src="./img/uwc_pearson.jpg" class="uwcimg">
-                            <span class="uwcheading">Pearson College UWC</span>
+                            <img src='./img/uwc_pearson.jpg' class='uwcimg'>
+                            <span class='uwcheading'>
+                                Pearson College UWC
+                            </span>
                             <br /> <br />
                             <i>Victoria, Canada</i>
                         </p>
-
+            
                     </div>
                 </div>
-
+            
             </div>
 
 
@@ -106,14 +108,21 @@
 
                 setTimeout(function () {
                     $("#Pearson-card").hide();
-                }, 1500);
-
-
+                }, 000);
             });
 
             $("#Pearson-card").hover(function () {
                 $("#Pearson-card").show();
+            }, function () {
+
+                setTimeout(function () {
+                    $("#Pearson-card").hide();
+                }, 000);
             });
+
+            
+
+            
 
 
 
