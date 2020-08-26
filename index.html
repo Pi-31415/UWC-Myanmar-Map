@@ -11,12 +11,9 @@
             margin-right: auto;
             position: relative;
         }
-
         #map-container-mobile {
             display: none;
         }
-
-
         @media only screen and (max-width: 1100px) {
             #map-container-mobile {
                 display: block;
@@ -26,7 +23,6 @@
                 display: none;
             }
         }
-
         .card {
             position: relative;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -55,21 +51,17 @@
             font-size: 1.3em;
             color: #009B90;
         }
-
         .school-container {
             position: absolute;
         }
-
         .card-containers {
             position: absolute;
             padding: 10px;
             /*border: solid red 1px;*/
         }
-
         .svgcontainer {
             z-index: -1;
         }
-
         svg {
             z-index: -1;
             width: 35px;
@@ -80,7 +72,6 @@
             stroke-width: 1.92;
             cursor: pointer;
         }
-
         svg:hover {
             stroke-width: 5.0;
             stroke: #fff;
@@ -91,14 +82,14 @@
 
 <body>
 
-    <!--Desktop Interactive Version-->
+    <!--Ma0 - Desktop Interactive Version-->
     <div id="map-container-desktop">
         <img src="./world.svg" alt="map" width="90%" height="auto">
         <div id="school-list">
             <!--School markers are rendered here-->
         </div>
     </div>
-
+    <!--Map - Static Version for Mobile-->
     <div id="map-container-mobile">
         <img src="./img/map_static.png" alt="map" width="100%" height="auto">
     </div>
@@ -107,35 +98,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
-        function hover(name) {
-            var name = "#" + name;
-            var cardname = name + "-card";
-            console.log(name);
-            $(name).on("click", function () {
-                alert("The paragraph was clicked.");
-            });
-
-            /*
-            
-
-                $(name).hover(function () {
-                    $(cardname).show();
-                }, function () {
-                    if (shown == false) {
-                        $(cardname).hide();
-                    }
-                });
-
-                $(cardname).hover(function () {
-                    $(cardname).show();
-                    shown = true;
-                }, function () {
-                    $(cardname).fadeOut();
-                    shown = false;
-                });
-            */
-        }
-
         $(document).ready(function () {
             /**/
             var shown = false;
