@@ -3,6 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <style>
+        #map-container-desktop,
+        #map-container-mobile {
+            background-color: #a2dbd8;
+            width: 98vw;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        #map-container-mobile {
+            display: none;
+        }
+
+
+        @media only screen and (max-width: 1100px) {
+            #map-container-mobile {
+                display: block;
+            }
+
+            #map-container-desktop {
+                display: none;
+            }
+        }
+
         .card {
             position: relative;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -65,21 +89,21 @@
     </style>
 </head>
 
-<body style="margin: 0px">
+<body>
 
-
-    <div style="background-color: #a2dbd8;width:100vw;margin:0;position: relative;">
+    <!--Desktop Interactive Version-->
+    <div id="map-container-desktop">
         <img src="./world.svg" alt="map" width="90%" height="auto">
-
         <div id="school-list">
-
-
-
-
-
+            <!--School markers are rendered here-->
         </div>
-
     </div>
+
+    <div id="map-container-mobile">
+        <img src="./img/map_static.png" alt="map" width="100%" height="auto">
+    </div>
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
@@ -143,16 +167,17 @@
             var i;
             for (i = 0; i < obj.uwc.length; i++) {
                 var stylepos = "";
-                if(obj.uwc[i].position == "right"){
+                if (obj.uwc[i].position == "right") {
                     stylepos = "left:20px;bottom:-40px;";
-                }else{
+                } else {
                     stylepos = "right:20px;bottom:-40px;";
                 }
 
                 output += "<!--School--><div class='school-container' style='top:" + obj.uwc[i].top +
                     "%;left:" +
                     obj.uwc[i].left + "%;'><div class='svgcontainer'><svg id='" + obj.uwc[i].id +
-                    "' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 64 64' style='enable-background:new 0 0 64 64;' xml:space='preserve'><g><g><path class='st0' d='M51.7,23.5c0-11-8.8-20-19.7-20s-19.7,9-19.7,20C12.3,40.3,32,60.5,32,60.5S51.7,40.3,51.7,23.5zM22.7,22.7c0-5.2,4.2-9.3,9.3-9.3s9.3,4.2,9.3,9.3S37.2,32,32,32S22.7,27.8,22.7,22.7z'/></g></g></svg></div><div style='position:relative;'><div class='card-containers' style='"+stylepos+"' id='" +
+                    "' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 64 64' style='enable-background:new 0 0 64 64;' xml:space='preserve'><g><g><path class='st0' d='M51.7,23.5c0-11-8.8-20-19.7-20s-19.7,9-19.7,20C12.3,40.3,32,60.5,32,60.5S51.7,40.3,51.7,23.5zM22.7,22.7c0-5.2,4.2-9.3,9.3-9.3s9.3,4.2,9.3,9.3S37.2,32,32,32S22.7,27.8,22.7,22.7z'/></g></g></svg></div><div style='position:relative;'><div class='card-containers' style='" +
+                    stylepos + "' id='" +
                     obj.uwc[i].id + "-card'><div class='card'><img src='./img/" + obj.uwc[i].id +
                     ".jpg' class='uwcimg'><div style='padding:10px 5px 0px 0px'><span class='uwcheading'>" +
                     obj
@@ -178,7 +203,7 @@
                 }
             });
 
-            
+
 
             $(".card-containers").hover(function () {
                 name = "#" + $(this).attr('id');
