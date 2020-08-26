@@ -37,7 +37,7 @@
             z-index: 10;
         }
         .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
         }
         .uwcimg {
             width: 100px;
@@ -45,7 +45,6 @@
             float: left;
             margin-right: 10px;
         }
-
         .uwcheading {
             font-size: 1.3em;
             color: #009B90;
@@ -56,6 +55,8 @@
         .card-containers {
             position: absolute;
             padding: 10px;
+            padding-right:20px;
+            /*border:solid red 1px;*/
         }
         .svgcontainer {
             z-index: -1;
@@ -95,11 +96,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            /*Script for Map Interactivity*/
-            var shown = false;
-            var name = "";
-            var cardname = "";
+        function render() {
             var text = '{"uwc":[' +
                 '{"id":"Pearson","name":"Pearson College UWC","location":"Victoria, Canada","top":"20","left":"15","image_url":"/_site/data/images/news/17/home-Image%201.jpg","position":"right" },' +
                 '{"id":"USA","name":"UWC-USA","location":"Montezuma, New Mexico","top":"27","left":"19","image_url":"/_site/data/images/news/18/home-UWC173.jpg" ,"position":"right"},' +
@@ -125,13 +122,14 @@
             for (i = 0; i < obj.uwc.length; i++) {
                 var stylepos = "";
                 if (obj.uwc[i].position == "right") {
-                    stylepos = "left:20px;bottom:-40px;";
+                    stylepos = "left:25px;bottom:-40px;";
                 } else {
-                    stylepos = "right:20px;bottom:-40px;";
+                    stylepos = "right:25px;bottom:-40px;";
                 }
                 output += "<!--School--><div class='school-container' style='top:" + obj.uwc[i].top +
                     "%;left:" +
-                    obj.uwc[i].left + "%;'><div class='svgcontainer'><svg id='" + obj.uwc[i].id +
+                    obj.uwc[i].left + "%;'><div class='svgcontainer'><svg animation='" + obj.uwc[i].position +
+                    "' id='" + obj.uwc[i].id +
                     "' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 64 64' style='enable-background:new 0 0 64 64;' xml:space='preserve'><g><g><path class='st0' d='M51.7,23.5c0-11-8.8-20-19.7-20s-19.7,9-19.7,20C12.3,40.3,32,60.5,32,60.5S51.7,40.3,51.7,23.5zM22.7,22.7c0-5.2,4.2-9.3,9.3-9.3s9.3,4.2,9.3,9.3S37.2,32,32,32S22.7,27.8,22.7,22.7z'/></g></g></svg></div><div style='position:relative;'><div class='card-containers' style='" +
                     stylepos + "' id='" +
                     obj.uwc[i].id + "-card'><div class='card'><img src='./img/" + obj.uwc[i].id +
@@ -143,13 +141,43 @@
             //render to DOM
             document.getElementById("school-list").innerHTML = output;
             $(".card-containers").hide();
+        }
+        $(document).ready(function () {
+            /*Script for Map Interactivity*/
+            var shown = false;
+            var name = "";
+            var cardname = "";
+            var animation_direction = "";
+            render();
+
             $("svg").hover(function () {
                 name = "#" + $(this).attr('id');
+                animation_direction = $(this).attr('animation');
                 cardname = name + "-card";
                 $(cardname).show();
+                if (animation_direction == "left") {
+                    $(cardname).animate({
+                        right: '20px'
+                    });
+
+                } else {
+                    $(cardname).animate({
+                        left: '20px'
+                    });
+                }
             }, function () {
                 if (shown == false) {
                     $(cardname).hide();
+                    if (animation_direction == "left") {
+                        $(cardname).animate({
+                            right: '25px'
+                        });
+
+                    } else {
+                        $(cardname).animate({
+                            left: '25px'
+                        });
+                    }
                 }
             });
             $(".card-containers").hover(function () {
