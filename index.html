@@ -6,15 +6,17 @@
         /*CSS for map begins*/
         #map-container-desktop,
         #map-container-mobile {
-            background-color: #a2dbd8;
+            background-color: #fff;
             width: 98vw;
             margin-left: auto;
             margin-right: auto;
             position: relative;
         }
+
         #map-container-mobile {
             display: none;
         }
+
         @media only screen and (max-width: 1100px) {
             #map-container-mobile {
                 display: block;
@@ -24,6 +26,7 @@
                 display: none;
             }
         }
+
         .card {
             position: relative;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -31,51 +34,61 @@
             width: 40%;
             font-family: sans-serif;
             background-color: #fff;
+            border: solid #009B90 2px;
             width: 360px;
             color: #777;
             overflow: auto;
             z-index: 10;
+            border-radius: 25px;
         }
+
         .card:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
         }
+
         .uwcimg {
             width: 100px;
             height: 100px;
             float: left;
             margin-right: 10px;
         }
+
         .uwcheading {
             font-size: 1.3em;
             color: #009B90;
         }
+
         .school-container {
             position: absolute;
         }
+
         .card-containers {
             position: absolute;
             padding: 10px;
-            padding-right:20px;
+            padding-right: 20px;
             /*border:solid red 1px;*/
         }
+
         .svgcontainer {
             z-index: -1;
         }
+
         svg {
             z-index: -1;
             width: 35px;
             height: 35px;
-            fill: #FFFFFF;
+            fill: red;
             fill-opacity: 0.6;
-            stroke: #FFFFFF;
+            stroke: #777;
             stroke-width: 1.92;
             cursor: pointer;
         }
+
         svg:hover {
-            stroke-width: 5.0;
-            stroke: #fff;
-            fill-opacity: 1.0;
+            stroke: #777;
+            fill-opacity: 0.8;
         }
+
         /*CSS for map ends*/
     </style>
 </head>
@@ -149,6 +162,10 @@
             var cardname = "";
             render();
 
+            $("#map-container-desktop").mousedown(function () {
+                $(".card-containers").fadeOut();
+            });
+
             $("svg").hover(function () {
                 name = "#" + $(this).attr('id');
                 animation_direction = $(this).attr('animation');
@@ -156,7 +173,7 @@
                 $(cardname).show();
             }, function () {
                 if (shown == false) {
-                    $(cardname).hide();
+                    //$(cardname).hide();
                 }
             });
             $(".card-containers").hover(function () {
