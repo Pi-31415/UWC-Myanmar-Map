@@ -35,7 +35,7 @@
             font-family: sans-serif;
             background-color: #fff;
             border: solid #009B90 3px;
-            width: 250px;
+            width: 300px;
             height: 100px;
             padding: 10px;
             color: #777;
@@ -56,8 +56,6 @@
             border-radius: 50%;
         }
 
-        
-
         .uwcheading {
             font-size: 1.05em;
             color: #009B90;
@@ -66,6 +64,14 @@
         .uwclocation {
             color: #999;
             font-size: 0.9em;
+        }
+        .uwclink{
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .uwclink:hover{
+            color:#009B90;
         }
 
         .school-container {
@@ -125,7 +131,7 @@
                 '{"id":"RCN","name":"UWC Red Cross Nordic","location":"Flekke, Norway","top":"13","left":"44","image_url":"/_site/data/images/news/26/home-UWCRCN_Hiking_2.jpg" ,"position":"right","link":"https://uwcrcn.no/"},' +
                 '{"id":"Atlantic","name":"UWC Atlantic College","location":"Vale of Glamorgan, Wales, UK","top":"18","left":"42","image_url":"/_site/data/images/news/29/home-Campus-and-Students_03a.jpg" ,"position":"right","link":"https://www.atlanticcollege.org/"},' +
                 '{"id":"Maastricht","name":"UWC Maastricht","location":"Maastricht, The Netherlands","top":"20","left":"44","image_url":"/_site/data/images/news/31/home-IMG_4087.jpg","position":"right" ,"link":"https://www.uwcmaastricht.nl/"},' +
-                '{"id":"Bosch","name":"UWC Robert Bosch College","location":"Freiburg, Germany","top":"21","left":"45","image_url":"/_site/data/images/news/27/home-UWC%20Robert%20Bosch%20College_Schulerdorf.jpg","position":"right","link":"https://www.uwcrobertboschcollege.de/en/" },' +
+                '{"id":"Bosch","name":"UWC Robert Bosch","location":"Freiburg, Germany","top":"21","left":"45","image_url":"/_site/data/images/news/27/home-UWC%20Robert%20Bosch%20College_Schulerdorf.jpg","position":"right","link":"https://www.uwcrobertboschcollege.de/en/" },' +
                 '{"id":"Adriatic","name":"UWC Adriatic","location":"Duino, Italy","top":"23","left":"46","image_url":"/_site/data/images/news/28/home-Yearbook%20Picture.jpg","position":"right","link":"https://www.uwcad.it/" },' +
                 '{"id":"Mostar","name":"UWC Mostar","location":"Mostar, Bosnia and Herzegovina","top":"24","left":"47","image_url":"/_site/data/images/news/25/home-The%20school%20and%20graduation.jpg" ,"position":"right","link":"http://uwcmostar.ba/"},' +
                 '{"id":"Dilijan","name":"UWC Dilijan","location":"Dilijan, Armenia","top":"25","left":"53","image_url":"/_site/data/images/news/30/home-UWC%20Day.jpg","position":"right" ,"link":"https://uwcdilijan.org/"},' +
@@ -135,7 +141,7 @@
                 '{"id":"LPC","name":"Li Po Chun UWC","location":"Hong Kong S.A.R, China","top":"37","left":"71.3","image_url":"/_site/data/images/news/16/home-LPCUWC1.jpg" ,"position":"left","link":"https://www.lpcuwc.edu.hk/"},' +
                 '{"id":"Changshu","name":"UWC Changshu China","location":"Changshu, China","top":"32.15","left":"72.3","image_url":"/_site/data/images/news/21/home-UWC%20Day%201%20Finals-large-10.jpg" ,"position":"left","link":"http://www.uwcchina.org/en"},' +
                 '{"id":"ISAK","name":"UWC ISAK Japan","location":"Kariuzawa, Japan","top":"27.26","left":"75.73","image_url":"/_site/data/images/news/23/home-UWCIJ_2_Castle.jpg","position":"left" ,"link":"https://uwcisak.jp/"},' +
-                '{"id":"UWCSA","name":"Waterford Kamhlaba UWCSA","location":"Mbabane, Eswatini","top":"67.5","left":"50.23","image_url":"/_site/data/images/news/19/home-aerial%20view%20of%20WK_fullsize_Connor%20Baer,%20Leo%20Penny%20and%20Nicolai%20Davies.jpg" ,"position":"right","link":"https://www.waterford.sz/"},' +
+                '{"id":"UWCSA","name":"WKUWC South Africa","location":"Mbabane, Eswatini","top":"67.5","left":"50.23","image_url":"/_site/data/images/news/19/home-aerial%20view%20of%20WK_fullsize_Connor%20Baer,%20Leo%20Penny%20and%20Nicolai%20Davies.jpg" ,"position":"right","link":"https://www.waterford.sz/"},' +
                 '{"id":"UWCEA","name":"UWC East Africa","location":"Moshi and Arusha, Tanzania","top":"52.4","left":"52.1","image_url":"/_site/data/images/news/5031/home-View%20of%20Kili%20from%20campus%205).JPG","position":"right","link":"https://www.uwcea.org/" }]}';
             obj = JSON.parse(text);
             var output = "";
@@ -158,7 +164,7 @@
                     ".jpg' class='uwcimg'><div style='padding:10px 5px 0px 0px'><span class='uwcheading'>" +
                     obj
                     .uwc[i].name + "</span><br/><i class='uwclocation'>" + obj.uwc[i].location +
-                    "</i></div></div></div></div></div></div></a>";
+                    "</i><br/><br/><u class='uwclink'>Visit website</u></div></div></div></div></div></div></a>";
             }
             //render to DOM
             document.getElementById("school-list").innerHTML = output;
