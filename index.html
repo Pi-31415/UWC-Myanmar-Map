@@ -35,7 +35,7 @@
             font-family: sans-serif;
             background-color: #fff;
             border: solid #009B90 3px;
-            width: 300px;
+            width: 250px;
             height: 100px;
             padding: 10px;
             color: #777;
@@ -135,7 +135,7 @@
                 '{"id":"LPC","name":"Li Po Chun UWC","location":"Hong Kong S.A.R, China","top":"37","left":"71.3","image_url":"/_site/data/images/news/16/home-LPCUWC1.jpg" ,"position":"left","link":"https://www.lpcuwc.edu.hk/"},' +
                 '{"id":"Changshu","name":"UWC Changshu China","location":"Changshu, China","top":"32.15","left":"72.3","image_url":"/_site/data/images/news/21/home-UWC%20Day%201%20Finals-large-10.jpg" ,"position":"left","link":"http://www.uwcchina.org/en"},' +
                 '{"id":"ISAK","name":"UWC ISAK Japan","location":"Kariuzawa, Japan","top":"27.26","left":"75.73","image_url":"/_site/data/images/news/23/home-UWCIJ_2_Castle.jpg","position":"left" ,"link":"https://uwcisak.jp/"},' +
-                '{"id":"UWCSA","name":"Waterford Kamhlaba UWC of Southern Africa","location":"Mbabane, Eswatini","top":"67.5","left":"50.23","image_url":"/_site/data/images/news/19/home-aerial%20view%20of%20WK_fullsize_Connor%20Baer,%20Leo%20Penny%20and%20Nicolai%20Davies.jpg" ,"position":"right","link":"https://www.waterford.sz/"},' +
+                '{"id":"UWCSA","name":"Waterford Kamhlaba UWCSA","location":"Mbabane, Eswatini","top":"67.5","left":"50.23","image_url":"/_site/data/images/news/19/home-aerial%20view%20of%20WK_fullsize_Connor%20Baer,%20Leo%20Penny%20and%20Nicolai%20Davies.jpg" ,"position":"right","link":"https://www.waterford.sz/"},' +
                 '{"id":"UWCEA","name":"UWC East Africa","location":"Moshi and Arusha, Tanzania","top":"52.4","left":"52.1","image_url":"/_site/data/images/news/5031/home-View%20of%20Kili%20from%20campus%205).JPG","position":"right","link":"https://www.uwcea.org/" }]}';
             obj = JSON.parse(text);
             var output = "";
@@ -179,7 +179,9 @@
                 name = "#" + $(this).attr('id');
                 animation_direction = $(this).attr('animation');
                 cardname = name + "-card";
+                $(".card-containers").css('zIndex', '10');
                 $(cardname).show();
+                $(cardname).css('zIndex', '20');
             }, function () {
                 if (shown == false) {
                     //$(cardname).hide();
@@ -188,7 +190,9 @@
             $(".card-containers").hover(function () {
                 name = "#" + $(this).attr('id');
                 cardname = name;
+                $(".card-containers").css('zIndex', '10');
                 $(cardname).show();
+                $(cardname).css('zIndex', '20');
                 shown = true;
             }, function () {
                 $(cardname).fadeOut();
