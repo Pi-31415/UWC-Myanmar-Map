@@ -11,6 +11,7 @@
             margin-left: auto;
             margin-right: auto;
             position: relative;
+            
         }
 
         #map-container-mobile {
@@ -39,7 +40,7 @@
             color: #777;
             overflow: auto;
             z-index: 10;
-            border-radius: 25px;
+            border-radius: 10px;
         }
 
         .card:hover {
@@ -51,11 +52,16 @@
             height: 100px;
             float: left;
             margin-right: 10px;
+            border-right: solid #009B90 2px;
         }
 
         .uwcheading {
             font-size: 1.3em;
             color: #009B90;
+        }
+        .uwclocation{
+            color:#999;
+            font-size:0.9em;
         }
 
         .school-container {
@@ -146,7 +152,7 @@
                     obj.uwc[i].id + "-card'><div class='card'><img src='./img/" + obj.uwc[i].id +
                     ".jpg' class='uwcimg'><div style='padding:10px 5px 0px 0px'><span class='uwcheading'>" +
                     obj
-                    .uwc[i].name + "</span><br/><i>" + obj.uwc[i].location +
+                    .uwc[i].name + "</span><br/><i class='uwclocation'>" + obj.uwc[i].location +
                     "</i></div></div></div></div></div></a>";
             }
             //render to DOM
