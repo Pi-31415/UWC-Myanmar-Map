@@ -124,7 +124,7 @@
                 if (obj.uwc[i].position == "right") {
                     stylepos = "left:25px;bottom:-40px;";
                 } else {
-                    stylepos = "right:25px;bottom:-40px;";
+                    stylepos = "right:20px;bottom:-40px;";
                 }
                 output += "<!--School--><div class='school-container' style='top:" + obj.uwc[i].top +
                     "%;left:" +
@@ -147,7 +147,6 @@
             var shown = false;
             var name = "";
             var cardname = "";
-            var animation_direction = "";
             render();
 
             $("svg").hover(function () {
@@ -155,29 +154,9 @@
                 animation_direction = $(this).attr('animation');
                 cardname = name + "-card";
                 $(cardname).show();
-                if (animation_direction == "left") {
-                    $(cardname).animate({
-                        right: '20px'
-                    });
-
-                } else {
-                    $(cardname).animate({
-                        left: '20px'
-                    });
-                }
             }, function () {
                 if (shown == false) {
                     $(cardname).hide();
-                    if (animation_direction == "left") {
-                        $(cardname).animate({
-                            right: '25px'
-                        });
-
-                    } else {
-                        $(cardname).animate({
-                            left: '25px'
-                        });
-                    }
                 }
             });
             $(".card-containers").hover(function () {
