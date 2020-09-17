@@ -1,6 +1,5 @@
 # UWC-Myanmar-Map
 
-Demo : [https://uwcmyanmarmap.netlify.app/](https://uwcmyanmarmap.netlify.app/)
 
 Dependencies
 
